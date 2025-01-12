@@ -17,27 +17,30 @@ namespace SingletonDesignPattern
         }
         static void Main(string[] args)
         {
+            Parallel.Invoke(() => AccessSingleton(),
+                             () => AccessSingleton()
+                             );
 
-            SingletonClass singleton1 = SingletonClass.GetInstance();
-            Console.WriteLine(singleton1.GetHashCode());
+            //SingletonClass singleton1 = SingletonClass.GetInstance();
+            //Console.WriteLine(singleton1.GetHashCode());
 
-            SingletonClass singleton2 = SingletonClass.GetInstance();
-            Console.WriteLine(singleton2.GetHashCode());
+            //SingletonClass singleton2 = SingletonClass.GetInstance();
+            //Console.WriteLine(singleton2.GetHashCode());
 
-            SingletonClass singleton3 = SingletonClass.GetInstance();
-            Console.WriteLine(singleton3.GetHashCode());
+            //SingletonClass singleton3 = SingletonClass.GetInstance();
+            //Console.WriteLine(singleton3.GetHashCode());
 
-            Thread[] threads = new Thread[5];
-            for (int i = 0; i < threads.Length; i++)
-            {
-                threads[i] = new Thread(AccessSingleton);
-                threads[i].Start();
-            }
+            //Thread[] threads = new Thread[3];
+            //for (int i = 0; i < threads.Length; i++)
+            //{
+            //    threads[i] = new Thread(AccessSingleton);
+            //    threads[i].Start();
+            //}
 
-            foreach (Thread thread in threads)
-            {
-                thread.Join();
-            }
+            //foreach (Thread thread in threads)
+            //{
+            //    thread.Join();
+            //}
 
             Console.WriteLine("All threads have completed successfully");
 

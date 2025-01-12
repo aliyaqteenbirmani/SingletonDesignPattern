@@ -6,6 +6,7 @@ namespace SingletonDesignPattern
     sealed class SingletonClass
     {
         // using Lazy<T> for thread-safe and lazy initialization to make sure that each thread is getting the same instance
+        // It give
         private static readonly Lazy<SingletonClass> _instance = new Lazy<SingletonClass>(() => new SingletonClass());
 
         // constructor must be private to prevent from creating multiple instances
