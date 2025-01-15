@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using SingletonDesignPattern.FactoryDesignPattern;
 using System.Xml.Linq;
+using SingletonDesignPattern.AbstractFactoryDesignPattern;
+using SingletonDesignPattern.AbstractFactoryDesignPattern.ConcreteFactorys;
 
 
 namespace SingletonDesignPattern
@@ -19,15 +21,15 @@ namespace SingletonDesignPattern
         }
         static void Main(string[] args)
         {
-            Parallel.Invoke(() => AccessSingleton(),
-                             () => AccessSingleton()
-                             );
+            //Parallel.Invoke(() => AccessSingleton(),
+            //                 () => AccessSingleton()
+            //                 );
 
-            Console.WriteLine("All threads have completed successfully");
+            //Console.WriteLine("All threads have completed successfully");
 
             // Without Factory Design Pattern Implemention
 
-            Console.Write("Enter Card Type: ");
+            /*Console.Write("Enter Card Type: ");
             string cardType = Console.ReadLine();
 /*
             ICreditCard card = null;
@@ -55,7 +57,7 @@ namespace SingletonDesignPattern
             else
             {
                 Console.WriteLine("Invalid Card Type");
-            }*/
+           // } //
 
             // what are the issues with the above implementation?
             // First, Tight Coupling: btw the client (Program) class and the product classes, changes in one class we must make changes in the other classes too.
@@ -76,7 +78,19 @@ namespace SingletonDesignPattern
             }
 
             // now look the client (program) and the product classes are loosely coupled,
-            // if we add any other type of credit card then we don't need to make changes in client code
+            // if we add any other type of credit card then we don't need to make changes in client code */
+
+            IVehicleFactory regularVehivle = new RegularVehicleFactory();
+            IBikes regularBike = regularVehivle.CreateBike();
+            regularBike.GetDetails();
+            ICars regularCar = regularVehivle.CreateCar();
+            regularCar.GetDetails();
+
+            IVehicleFactory sportVehivle = new SportVehicleFactory();
+            IBikes sportBike = regularVehivle.CreateBike();
+            sportBike.GetDetails();
+            ICars sportCar = regularVehivle.CreateCar();
+            sportCar.GetDetails();
             Console.ReadLine();
         }
 

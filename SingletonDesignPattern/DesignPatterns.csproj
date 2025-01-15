@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactoryDesignPattern\ConcreteFactorys\RegularVehicleFactory.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\ConcreteFactorys\SportVehicleFactory.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\ConcreteProducts\RegularBikes.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\ConcreteProducts\RegularCars.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\ConcreteProducts\SportBikes.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\ConcreteProducts\SportCars.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\IBikes.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\ICars.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\IVehicleFactory.cs" />
     <Compile Include="FactoryDesignPattern\CreditCardFactory.cs" />
     <Compile Include="FactoryDesignPattern\ICreditCard.cs" />
     <Compile Include="FactoryDesignPattern\MasterCard.cs" />
