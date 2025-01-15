@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FactoryDesignPattern\CreditCardFactory.cs" />
+    <Compile Include="FactoryDesignPattern\ICreditCard.cs" />
+    <Compile Include="FactoryDesignPattern\Moneyback.cs" />
+    <Compile Include="FactoryDesignPattern\Platinum.cs" />
+    <Compile Include="FactoryDesignPattern\Titanium.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingletonClass.cs" />

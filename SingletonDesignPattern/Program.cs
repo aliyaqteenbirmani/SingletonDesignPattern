@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using SingletonDesignPattern.FactoryDesignPattern;
+using System.Xml.Linq;
 
 
 namespace SingletonDesignPattern
@@ -21,30 +23,61 @@ namespace SingletonDesignPattern
                              () => AccessSingleton()
                              );
 
-            //SingletonClass singleton1 = SingletonClass.GetInstance();
-            //Console.WriteLine(singleton1.GetHashCode());
-
-            //SingletonClass singleton2 = SingletonClass.GetInstance();
-            //Console.WriteLine(singleton2.GetHashCode());
-
-            //SingletonClass singleton3 = SingletonClass.GetInstance();
-            //Console.WriteLine(singleton3.GetHashCode());
-
-            //Thread[] threads = new Thread[3];
-            //for (int i = 0; i < threads.Length; i++)
-            //{
-            //    threads[i] = new Thread(AccessSingleton);
-            //    threads[i].Start();
-            //}
-
-            //foreach (Thread thread in threads)
-            //{
-            //    thread.Join();
-            //}
-
             Console.WriteLine("All threads have completed successfully");
+
+            // Without Factory Design Pattern Implemention
+
+            Console.WriteLine("Enter Card Type: ");
+            string cardType = Console.ReadLine();
+
+            ICreditCard card = null;
+            if (cardType.ToLower() == "moneyback")
+            {
+                card = new Moneyback();
+            }
+            else if (cardType.ToLower() == "titanium")
+            {
+                card = new Titanium();
+            }
+            else if (cardType.ToLower() == "platinum")
+            {
+                card = new Platinum();
+            }
+
+
+
+            if (card != null)
+            {
+                Console.WriteLine($"CardType: {card.GetCardType()}");
+                Console.WriteLine($"CreditCardLimit: {card.GetCreditLimit()}");
+                Console.WriteLine($"AnnualCharge: {card.GetAnnualCharge()}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Card Type");
+            }
+
+            // what are the issues with the above implementation?
+            // First, Tight Coupling: btw the client (Program) class and the product classes, changes in one class we must make changes in the other classes too.
+            // if we add a new credit card, we also need to modify the client code by adding an extra ELSE IF Condition which overhead the development
+            // but also for testing, So lets overcome this problem by using Factory Design Pattern, for this we need to create a factory Class
+
+
+            ICreditCard creditCard = CreditCardFactory.GetCreditCard("PLATINUM");
+            if(creditCard != null)
+            {
+                Console.WriteLine($"CardType: {creditCard.GetCardType()}");
+                Console.WriteLine($"CreditCardLimit: {creditCard.GetCreditLimit()}");
+                Console.WriteLine($"AnnualCharge: {creditCard.GetAnnualCharge()}");
+            }
+            else
+            {
+                Console.WriteLine("Invalid Card Type");
+            }
+
 
             Console.ReadLine();
         }
+
     }
 }
