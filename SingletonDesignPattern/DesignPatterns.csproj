@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="FactoryDesignPattern\CreditCardFactory.cs" />
     <Compile Include="FactoryDesignPattern\ICreditCard.cs" />
+    <Compile Include="FactoryDesignPattern\MasterCard.cs" />
     <Compile Include="FactoryDesignPattern\Moneyback.cs" />
     <Compile Include="FactoryDesignPattern\Platinum.cs" />
     <Compile Include="FactoryDesignPattern\Titanium.cs" />

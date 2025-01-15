@@ -27,9 +27,9 @@ namespace SingletonDesignPattern
 
             // Without Factory Design Pattern Implemention
 
-            Console.WriteLine("Enter Card Type: ");
+            Console.Write("Enter Card Type: ");
             string cardType = Console.ReadLine();
-
+/*
             ICreditCard card = null;
             if (cardType.ToLower() == "moneyback")
             {
@@ -55,7 +55,7 @@ namespace SingletonDesignPattern
             else
             {
                 Console.WriteLine("Invalid Card Type");
-            }
+            }*/
 
             // what are the issues with the above implementation?
             // First, Tight Coupling: btw the client (Program) class and the product classes, changes in one class we must make changes in the other classes too.
@@ -63,7 +63,7 @@ namespace SingletonDesignPattern
             // but also for testing, So lets overcome this problem by using Factory Design Pattern, for this we need to create a factory Class
 
 
-            ICreditCard creditCard = CreditCardFactory.GetCreditCard("PLATINUM");
+            ICreditCard creditCard = CreditCardFactory.GetCreditCard(cardType);
             if(creditCard != null)
             {
                 Console.WriteLine($"CardType: {creditCard.GetCardType()}");
@@ -75,7 +75,8 @@ namespace SingletonDesignPattern
                 Console.WriteLine("Invalid Card Type");
             }
 
-
+            // now look the client (program) and the product classes are loosely coupled,
+            // if we add any other type of credit card then we don't need to make changes in client code
             Console.ReadLine();
         }
 

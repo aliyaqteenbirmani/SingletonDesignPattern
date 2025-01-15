@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace SingletonDesignPattern.FactoryDesignPattern
 {
-    public class Platinum : ICreditCard
+    public class MasterCard : ICreditCard
     {
         public int GetAnnualCharge()
         {
-            return 2000;
+            return 2500;
         }
 
         public string GetCardType()
         {
-            return "Platinum Plus";
+            return "Standard Chartered Mastercard";
         }
 
         public int GetCreditLimit()
         {
-            return 35000;
+            return 40000;
         }
-    
     }
 }

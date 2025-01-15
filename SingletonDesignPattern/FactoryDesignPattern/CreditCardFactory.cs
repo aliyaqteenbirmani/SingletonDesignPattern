@@ -23,6 +23,10 @@ namespace SingletonDesignPattern.FactoryDesignPattern
             {
                 creditCard = new Platinum();
             }
+            else if(cardType.ToLower() == "mastercard")
+            {
+                creditCard = new MasterCard();
+            }
             return creditCard;
         }
     }
