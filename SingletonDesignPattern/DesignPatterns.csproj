@@ -52,6 +52,7 @@
     <Compile Include="AbstractFactoryDesignPattern\IBikes.cs" />
     <Compile Include="AbstractFactoryDesignPattern\ICars.cs" />
     <Compile Include="AbstractFactoryDesignPattern\IVehicleFactory.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\IPaymentAuthorization.cs" />
     <Compile Include="FactoryDesignPattern\CreditCardFactory.cs" />
     <Compile Include="FactoryDesignPattern\ICreditCard.cs" />
     <Compile Include="FactoryDesignPattern\MasterCard.cs" />
@@ -65,5 +66,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
