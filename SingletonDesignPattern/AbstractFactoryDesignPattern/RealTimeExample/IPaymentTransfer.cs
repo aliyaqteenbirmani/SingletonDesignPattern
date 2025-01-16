@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SingletonDesignPattern.AbstractFactoryDesignPattern.RealTimeExample
 {
-    public interface IPaymentAuthorization
+    public interface IPaymentTransfer
     {
-        bool AuthorizePayment(decimal amount);
+        bool Transfer(decimal amount);
     }
 }

@@ -1,5 +1,7 @@
 ﻿using SingletonDesignPattern.AbstractFactoryDesignPattern;
 using SingletonDesignPattern.AbstractFactoryDesignPattern.ConcreteFactorys;
+using SingletonDesignPattern.AbstractFactoryDesignPattern.RealTimeExample;
+using SingletonDesignPattern.AbstractFactoryDesignPattern.RealTimeExample.ConcreteFactory;
 using System;
 using  System.Threading;
 
@@ -74,18 +76,31 @@ namespace SingletonDesignPattern
             // now look the client (program) and the product classes are loosely coupled,
             // if we add any other type of credit card then we don't need to make changes in client code */
 
-            IVehicleFactory regularVehivle = new RegularVehicleFactory();
-            IBikes regularBike = regularVehivle.CreateBike();
-            regularBike.GetDetails();
-            ICars regularCar = regularVehivle.CreateCar();
-            regularCar.GetDetails();
+            //IVehicleFactory regularVehivle = new RegularVehicleFactory();
+            //IBikes regularBike = regularVehivle.CreateBike();
+            //regularBike.GetDetails();
+            //ICars regularCar = regularVehivle.CreateCar();
+            //regularCar.GetDetails();
 
-            IVehicleFactory sportVehivle = new SportVehicleFactory();
-            IBikes sportBike = regularVehivle.CreateBike();
-            sportBike.GetDetails();
-            ICars sportCar = regularVehivle.CreateCar();
-            sportCar.GetDetails();
-            Console.ReadLine();
+            //IVehicleFactory sportVehivle = new SportVehicleFactory();
+            //IBikes sportBike = regularVehivle.CreateBike();
+            //sportBike.GetDetails();
+            //ICars sportCar = regularVehivle.CreateCar();
+            //sportCar.GetDetails();
+
+
+
+            Console.WriteLine("Processing payment using Credit Card:");
+            var creditCardFactory = new CreditCardPaymentFactory();
+            var creditCardProcessor = new PaymentProcessor(creditCardFactory);
+            creditCardProcessor.ProcessPayment(100.00M);
+
+            Console.WriteLine("\nProcessing payment using PayPal:");
+            var paypalFactory = new PayPalPaymentFactory();
+            var paypalProcessor = new PaymentProcessor(paypalFactory);
+            paypalProcessor.ProcessPayment(100.00M);
+            Console.ReadKey();
+            //Console.ReadLine();
         }
 
     }

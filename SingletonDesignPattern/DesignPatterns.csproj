@@ -52,7 +52,16 @@
     <Compile Include="AbstractFactoryDesignPattern\IBikes.cs" />
     <Compile Include="AbstractFactoryDesignPattern\ICars.cs" />
     <Compile Include="AbstractFactoryDesignPattern\IVehicleFactory.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\AbstracFactory\IPaymentFactory.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\ConcreteFactory\CreditCardPaymentFactory.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\ConcreteFactory\PayPalPaymentFactory.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\ConcreteProduct\CreditCardAuthorization.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\ConcreteProduct\CreditCardTransfer.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\ConcreteProduct\PaypalAuthorization.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\ConcreteProduct\PayPalTransfer.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\IPaymentTransfer.cs" />
     <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\IPaymentAuthorization.cs" />
+    <Compile Include="AbstractFactoryDesignPattern\RealTimeExample\PaymentProcessor.cs" />
     <Compile Include="FactoryDesignPattern\CreditCardFactory.cs" />
     <Compile Include="FactoryDesignPattern\ICreditCard.cs" />
     <Compile Include="FactoryDesignPattern\MasterCard.cs" />
